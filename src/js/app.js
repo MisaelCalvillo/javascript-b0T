@@ -19,16 +19,34 @@ function esExacta(num1, num2) {
   }
 }
 
+function calculaAnios(yearNow, otherYear) {
+  if ( yearNow > otherYear) {
+    var resultado = yearNow - otherYear;
+    return ("Han pasado " + resultado)
+  } else if(yearNow < otherYear){
+    var resultado = otherYear - yearNow;
+    return ("Faltan " + resultado + " años.")
+  } else {
+    return ("Es el mismo año");
+  }
+}
+
+
 function programa1() {
   var numero1 = prompt("Ingresa el valor del primer número: ");
   var numero2 = prompt("Ingresa el valoer del segundo número: ");
-  if (esExacta(numero1, numero2)) {
+  var resultado = esExacta(numero1, numero2)
+  if (resultado) {
     alert("La división es exacta.")
   } else {
     alert("La división no es exacta.")
   }
 }
 
-programa1();
-programa1();
+function programa3() {
+  var yearNow = Number(prompt("Ingresa el año actual."));
+  var otherYear = Number(prompt("Ingresa cualquier otro año. "));
+  alert(calculaAnios(yearNow, otherYear))
+}
+
 
